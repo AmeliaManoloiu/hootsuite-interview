@@ -135,7 +135,7 @@ class App extends Component {
   };
   
   getNumberOfItems() {
-    fetch('http://localhost/api/v1/car/?format=json')
+    fetch('/api/v1/car/?format=json')
     .then((response) => {
       return response.json();
     })
