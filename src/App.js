@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-const API_URL = 'http://localhost/api/v1/car/';
+const API_URL = '/api/v1/car/';
 class App extends Component {
   constructor() {
     super();
@@ -116,7 +116,7 @@ class App extends Component {
         year: this.state.year
         }
     
-    fetch('/api/v1/car/' + this.state.id + '/', {
+      fetch(API_URL + this.state.id + '/', {
           method: 'PUT',
           credentials: 'same-origin',
           body: JSON.stringify(objects),
@@ -135,7 +135,7 @@ class App extends Component {
   };
   
   getNumberOfItems() {
-    fetch('/api/v1/car/?format=json')
+      fetch(API_URL + '?format=json')
     .then((response) => {
       return response.json();
     })
